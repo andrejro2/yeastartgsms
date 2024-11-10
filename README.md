@@ -3,6 +3,7 @@ TG SMS API in Go
 
 Usage example:
 
+```go
 func main() {
 	port := 1
 	dest := "02342324232"
@@ -16,3 +17,4 @@ func main() {
 		fmt.Println("SMS sent successfully!")
 	}
 }
+```
