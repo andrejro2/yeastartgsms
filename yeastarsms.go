@@ -2,6 +2,7 @@ package yeastarsms
 
 import (
 	"bufio"
+	"errors"
 	"fmt"
 	"log"
 	"net"
@@ -32,12 +33,11 @@ func GetConnection() *Connection {
 	return conn
 }
 
-func ConnectToService() {
-	conn := GetConnection()
-	if conn == nil {
-		fmt.Println("Connection details not set.")
-		return
+func ConnectToService() (*Connection, error) {
+	if conn != nil {
+		return conn, nil
 	}
+	return nil, errors.New("error: Connection variable is empty or does not exist")
 }
 
 // SendSMS connects to the GSM gateway, logs in, and sends an SMS.
