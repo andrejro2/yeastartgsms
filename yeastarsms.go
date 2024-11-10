@@ -19,7 +19,7 @@ type Connection struct {
 var conn *Connection
 
 // SetConnection initializes the Connection struct with details
-func SetConnection(host string, port int, username string, password string) {
+func SetConnection(host string, username string, password string) {
 	conn = &Connection{
 		Host:     host,
 		Username: username,
